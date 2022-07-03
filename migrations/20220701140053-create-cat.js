@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("users", {
+    await queryInterface.createTable("cats", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,18 +12,25 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING,
-        unique: true,
-      },
-      phone: {
-        type: Sequelize.INTEGER,
-      },
-      password: {
+      picture: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      isOwner: {
+      description: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      seenTime: {
+        type: Sequelize.INTEGER,
+        defaultValue: 1,
+      },
+      lat: {
+        type: Sequelize.INTEGER,
+      },
+      long: {
+        type: Sequelize.INTEGER,
+      },
+      ownerId: {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
       },
@@ -38,6 +45,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("users");
+    await queryInterface.dropTable("cats");
   },
 };
