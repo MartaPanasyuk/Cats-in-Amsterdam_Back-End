@@ -19,9 +19,9 @@ module.exports = (sequelize, DataTypes) => {
       name: { type: DataTypes.STRING, allowNull: false },
       picture: { type: DataTypes.STRING, allowNull: false },
       description: { type: DataTypes.TEXT, allowNull: false },
-      seenTime: { type: DataTypes.INTEGER, defaultValue: 1 },
-      lat: { type: DataTypes.INTEGER, allowNull: false },
-      long: { type: DataTypes.INTEGER, allowNull: false },
+      like: { type: DataTypes.INTEGER, defaultValue: 1 },
+      latitude: { type: DataTypes.FLOAT, allowNull: false },
+      longitude: { type: DataTypes.FLOAT, allowNull: false },
       ownerId: { type: DataTypes.BOOLEAN, defaultValue: false },
     },
     {

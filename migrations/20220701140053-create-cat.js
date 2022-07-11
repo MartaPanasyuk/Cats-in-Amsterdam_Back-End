@@ -20,15 +20,15 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      seenTime: {
+      like: {
         type: Sequelize.INTEGER,
         defaultValue: 1,
       },
-      lat: {
-        type: Sequelize.INTEGER,
+      latitude: {
+        type: Sequelize.FLOAT,
       },
-      long: {
-        type: Sequelize.INTEGER,
+      longitude: {
+        type: Sequelize.FLOAT,
       },
       ownerId: {
         type: Sequelize.BOOLEAN,

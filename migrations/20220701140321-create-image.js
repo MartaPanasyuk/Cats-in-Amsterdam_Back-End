@@ -11,6 +11,12 @@ module.exports = {
       url: {
         type: Sequelize.STRING,
       },
+      latitude: {
+        type: Sequelize.FLOAT,
+      },
+      longitude: {
+        type: Sequelize.FLOAT,
+      },
       userId: {
         type: Sequelize.INTEGER,
         references: {

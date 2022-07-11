@@ -10,6 +10,7 @@ module.exports = {
       },
       stars: {
         type: Sequelize.INTEGER,
+        defaultValue: 1,
       },
       categoryId: {
         type: Sequelize.INTEGER,

@@ -9,13 +9,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      rating.belongsTo(models.category);
+      rating.belongsTo(models.category, { foreignKey: "categoryId" });
       rating.belongsTo(models.cat);
     }
   }
   rating.init(
     {
-      stars: DataTypes.INTEGER,
+      stars: { type: DataTypes.INTEGER, defaultValue: 1 },
     },
     {
       sequelize,
