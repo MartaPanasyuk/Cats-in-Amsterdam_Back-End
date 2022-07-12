@@ -26,7 +26,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-//Get One Cat by ID with Comment, Images and Rating
+//Get One Cat by ID with Comment, Images and Rating { model: Comment, include: [User] },
 router.get("/:id", async (req, res, next) => {
   try {
     const catId = parseInt(req.params.id);
@@ -35,6 +35,7 @@ router.get("/:id", async (req, res, next) => {
     });
     res.send(oneCat);
   } catch (e) {
+    console.log(e.message);
     next(e);
   }
 });

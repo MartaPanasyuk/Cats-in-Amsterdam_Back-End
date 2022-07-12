@@ -28,9 +28,7 @@ router.post("/", async (req, res, next) => {
 //Get all categories (rating/)
 router.get("/", async (req, res, next) => {
   try {
-    const all = await Category.findAll({
-      include: [Rating],
-    });
+    const all = await Category.findAll();
     res.send(all);
   } catch (e) {
     next(e);

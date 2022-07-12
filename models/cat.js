@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       cat.hasMany(models.rating);
       cat.hasMany(models.comment);
       cat.hasMany(models.image);
+      cat.belongsTo(models.user, { foreignKey: "ownerId" });
     }
   }
   cat.init(
@@ -22,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       like: { type: DataTypes.INTEGER, defaultValue: 1 },
       latitude: { type: DataTypes.FLOAT, allowNull: false },
       longitude: { type: DataTypes.FLOAT, allowNull: false },
-      ownerId: { type: DataTypes.BOOLEAN, defaultValue: false },
+      ownerId: { type: DataTypes.INTEGER, allowNull: true },
     },
     {
       sequelize,

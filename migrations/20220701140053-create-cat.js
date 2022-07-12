@@ -31,8 +31,14 @@ module.exports = {
         type: Sequelize.FLOAT,
       },
       ownerId: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false,
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+          model: "users",
+          key: "id",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
       },
       createdAt: {
         allowNull: false,
