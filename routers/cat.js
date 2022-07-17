@@ -7,7 +7,6 @@ module.exports = router;
 // Model
 
 const Cat = require("../models").cat;
-
 const Comment = require("../models").comment;
 const Image = require("../models").image;
 const Rating = require("../models").rating;
@@ -34,6 +33,20 @@ router.get("/:id", async (req, res, next) => {
       include: [Image, { model: Comment, include: [User] }, Rating],
     });
     res.send(oneCat);
+  } catch (e) {
+    console.log(e.message);
+    next(e);
+  }
+});
+
+//Get Comments with Cat
+router.get("/comment/:id", async (req, res, next) => {
+  try {
+    const commentId = parseInt(req.params.id);
+    const oneComment = await Comment.findByPk(commentId, {
+      include: [User, Cat],
+    });
+    res.send(oneComment);
   } catch (e) {
     console.log(e.message);
     next(e);
@@ -99,7 +112,7 @@ router.post("/:id", authMiddleware, async (req, res, next) => {
   }
 });
 
-//Post a new Comment
+//Add a new Comment
 router.post("/comment/:id", authMiddleware, async (req, res, next) => {
   try {
     const { text, userId, catId } = req.body;
