@@ -6,7 +6,7 @@ module.exports = {
       "cats",
       [
         {
-          name: "Marko, amazing neighborhood cat",
+          name: "Marko",
           picture:
             "https://i.pinimg.com/564x/45/ce/81/45ce810d432d96eeb91e0fd241a80d4d.jpg",
           description:
@@ -100,7 +100,7 @@ module.exports = {
             "https://i.pinimg.com/564x/60/e4/5a/60e45a3d03c781fbcce4cecc2e86cf7c.jpg",
           description:
             "Be careful, if you see her on the street it means, that you will be stuck there for 30 min minimum. this little woman will be super persistent ask you to play with her. ",
-          like: 1,
+          like: 3,
           latitude: 52.3670471776,
           longitude: 4.86820638193,
           ownerId: null,
@@ -113,7 +113,7 @@ module.exports = {
             "https://i.pinimg.com/564x/be/21/c0/be21c02833e4e2e535e6571af42615b7.jpg",
           description:
             "This young man with a great manners will not forgive you, If you you will pass by and don't pet him or  at least his back. ",
-          like: 1,
+          like: 2,
           latitude: 52.35099,
           longitude: 4.88661,
           ownerId: null,

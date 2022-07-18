@@ -1,6 +1,6 @@
 {
   "development": {
-    "url": "postgres://vjgxikmf:ERoZ00Tig3GGkL_x83B4XfpR5E6P4PqB@abul.db.elephantsql.com/vjgxikmf",
+    "url": "postgres://vhvwnvbprjuram:ec7d70546cfecc521471c642a778e5e6bcee0d2e83232ee8690f28b50da5c471@ec2-54-228-32-29.eu-west-1.compute.amazonaws.com:5432/ddlg8v3cq8fgof",
     "dialect": "postgres"
   },
   "test": {
@@ -11,10 +11,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "use_env_variable": "DATABASE_URL",
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": false
+      }
+    }
   }
 }

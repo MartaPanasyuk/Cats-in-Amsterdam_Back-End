@@ -1,4 +1,5 @@
 //packages
+const cors = require("cors");
 const express = require("express");
 const corsMiddleWare = require("cors");
 
@@ -11,6 +12,7 @@ const ratingRouter = require("./routers/rating");
 const { PORT } = require("./config/constants");
 
 // Create an express app
+app.use(cors());
 const app = express();
 
 // CORS middleware:  * Since our api is hosted on a different domain than our client
@@ -22,6 +24,7 @@ app.use(corsMiddleWare());
 app.use(express.json());
 
 //routes
+
 app.use("/auth", authRouter);
 app.use("/cats", catRouter);
 app.use("/rating", ratingRouter);

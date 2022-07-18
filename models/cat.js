@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       name: { type: DataTypes.STRING, allowNull: false },
       picture: { type: DataTypes.STRING, allowNull: false },
       description: { type: DataTypes.TEXT, allowNull: false },
-      like: { type: DataTypes.INTEGER, defaultValue: 1 },
+      like: { type: DataTypes.INTEGER, defaultValue: 3 },
       latitude: { type: DataTypes.FLOAT, allowNull: false },
       longitude: { type: DataTypes.FLOAT, allowNull: false },
       ownerId: { type: DataTypes.INTEGER, allowNull: true },
