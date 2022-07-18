@@ -42,9 +42,10 @@ router.get("/:id", async (req, res, next) => {
 //Get Comments with Cat
 router.get("/comment/:id", async (req, res, next) => {
   try {
-    const commentId = parseInt(req.params.id);
-    const oneComment = await Comment.findByPk(commentId, {
-      include: [User, Cat],
+    const catId = parseInt(req.params.id);
+    const oneComment = await Comment.findAll({
+      where: { catId: catId },
+      include: [User],
     });
     res.send(oneComment);
   } catch (e) {
