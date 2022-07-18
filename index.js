@@ -12,9 +12,9 @@ const ratingRouter = require("./routers/rating");
 const { PORT } = require("./config/constants");
 
 // Create an express app
-app.use(cors());
-const app = express();
 
+const app = express();
+app.use(cors());
 // CORS middleware:  * Since our api is hosted on a different domain than our client
 // we are are doing "Cross Origin Resource Sharing" (cors)
 // Cross origin resource sharing is disabled by express by default
